@@ -3,6 +3,7 @@ import os
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from dotenv import load_dotenv
+from sqlalchemy import null
 
 load_dotenv()
 
@@ -20,15 +21,22 @@ language_translator.set_service_url(url)
 language_translator.set_disable_ssl_verification(True)
 
 def english_to_french(englishtext):
+    if englishtext == '':
+        return "No text to translate."
+
     frenchtext = language_translator.translate(
     text=englishtext,
     model_id='en-fr').get_result()
     return frenchtext.get('translations')[0].get('translation')
 
 def french_to_english(frenchtext):
+    if frenchtext == '':
+        return "No text to translate."
+
     englishtext = language_translator.translate(
     text=frenchtext,
     model_id='fr-en').get_result()
 
     return englishtext.get('translations')[0].get('translation')
-    
+
+# print(english_to_french('Hello, my name is Julian'))    
