@@ -3,6 +3,7 @@ This project was built using Html, JavaScript, and Python3. The purpose of the p
 1. Convert English to French
 2. Convert English to Spanish
 3. Convert French to English
+4. Convert Spanish to English
 
 The project uses IBM-Watson language translator services to do the conversion. For this project to work on your server you need to do the following.
 1. Create an IBM Cloud account if you don't already have one.
