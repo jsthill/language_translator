@@ -35,5 +35,13 @@ def french_to_english(frenchtext):
     englishtext = language_translator.translate(
     text=frenchtext,
     model_id='fr-en').get_result()
-
     return englishtext.get('translations')[0].get('translation')
+
+def english_to_spanish(englishtext):
+    if englishtext == '':
+        return "No text to translate."
+
+    spanishtext = language_translator.translate(
+    text=englishtext,
+    model_id='en-es').get_result()
+    return spanishtext.get('translations')[0].get('translation')

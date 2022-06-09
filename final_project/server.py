@@ -17,6 +17,12 @@ def frenchToEnglish():
     # Write your code here
     return translator.french_to_english(textToTranslate)
 
+@app.route("/englishToSpanish")
+def englishToSpanish():
+    textToTranslate = request.args.get('textToTranslate')
+    # Write your code here
+    return translator.english_to_spanish(textToTranslate)
+
 @app.route("/")
 def renderIndexPage():
     # Write the code to render template
