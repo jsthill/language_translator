@@ -12,6 +12,7 @@ The project uses IBM-Watson language translator services to do the conversion. F
 5. Add the following lines of code to the .env file and save it.
 
   apikey ="<em><The key you copied from step 3.></em>"
+  
   url = "<em><The URL you copied from step 3.></em>"
   
 To run the project navigate to the "final_project" folder and run the server.py script.
