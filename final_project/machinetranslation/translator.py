@@ -45,3 +45,12 @@ def english_to_spanish(englishtext):
     text=englishtext,
     model_id='en-es').get_result()
     return spanishtext.get('translations')[0].get('translation')
+
+def spanish_to_english(spanishtext):
+    if spanishtext == '':
+        return "No text to translate."
+
+    englishtext = language_translator.translate(
+    text=spanishtext,
+    model_id='es-en').get_result()
+    return englishtext.get('translations')[0].get('translation')
